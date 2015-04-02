@@ -120,7 +120,7 @@ public class CookieJar extends CordovaPlugin {
 		Log.v(TAG, "Clearing cookies...");
         try{
             CookieManager.getInstance().removeAllCookie();
-        }catch (IOException er){
+        }catch (Exception er){
             this.callback.error(er.getMessage());
         }
     }
@@ -133,7 +133,7 @@ public class CookieJar extends CordovaPlugin {
 		Log.v(TAG, "Fetching cookies for " + URL +"...");
         try{
             return CookieManager.getInstance().getCookie(URL);
-        }catch (IOException er){
+        }catch (Exception er){
             this.callback.error(er.getMessage());
             return "ERROR";
         }
@@ -148,7 +148,7 @@ public class CookieJar extends CordovaPlugin {
         Log.v(TAG, "Fetching cookies for " + URL +" by key " + target + "...");
         try{
             return CookieManager.getInstance().getCookie(URL);
-        }catch (IOException er){
+        }catch (Exception er){
             this.callback.error(er.getMessage());
             return "ERROR";
         }
