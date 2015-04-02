@@ -42,8 +42,7 @@ function CookieJar() {
  * @param {Function} errorCallback The function to call when there was an error (OPTIONAL)
  */
 CookieJar.prototype.clear = function (successCallback, errorCallback) {
-    exec(successCallback, errorCallback, tag.
-        "clear", []);
+    exec(successCallback, errorCallback, tag, "clear", []);
 };
 
 /**
