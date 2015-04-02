@@ -24,7 +24,7 @@
  */
 
 
-package com.jean1880.cookies;
+package com.jean1880.CookieManager;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -64,6 +64,7 @@ public class CookieManager extends CordovaPlugin {
         this.callback = callbackContext;
         boolean success = false;
 
+        // Check action call
         switch (action){
             case "clear": // clear all cookies
                 this.clear();
