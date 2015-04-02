@@ -1,7 +1,7 @@
 {
     "version": "0.1.0",
-    "name": "com.jean1880.CookieManager",
-    "cordova_name": "CookieManager",
+    "name": "com.jean1880.CookieJar",
+    "cordova_name": "CookieJar",
     "description": "Cordova CookieManager Plugin",
     "license": "Apache 2.0",
     "keywords": [
