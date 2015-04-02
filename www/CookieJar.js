@@ -28,7 +28,7 @@ var exec = require('cordova/exec');
 /**
  * @constructor
  */
-function CookieManager() {
+function CookieJar() {
 
 }
 
@@ -38,7 +38,7 @@ function CookieManager() {
  * @param {Function} successCallback The function to call when cookies cleared successfully
  * @param {Function} errorCallback The function to call when there was an error (OPTIONAL)
  */
-Cookies.prototype.clear = function (successCallback, errorCallback) {
+CookieJar.prototype.clear = function (successCallback, errorCallback) {
     exec(successCallback, errorCallback, "CookieManager", "clear", []);
 };
 
@@ -48,7 +48,7 @@ Cookies.prototype.clear = function (successCallback, errorCallback) {
  * @param {Function} successCallback The function to call when cookies cleared successfully
  * @param {Function} errorCallback The function to call when there was an error (OPTIONAL)
  */
-Cookies.prototype.get = function (successCallback, errorCallback, URL, target) {
+CookieJar.prototype.get = function (successCallback, errorCallback, URL, target) {
     if (!URL) {
         // throw error 
         throw "Function call must include a URL target parameter";
@@ -69,4 +69,4 @@ Cookies.prototype.get = function (successCallback, errorCallback, URL, target) {
 };
 
 
-module.exports = new CookiCookieManageres();
+module.exports = new CookieJar();

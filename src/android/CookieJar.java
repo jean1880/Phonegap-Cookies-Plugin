@@ -48,7 +48,7 @@ import java.util.Map;
 public class CookieJar extends CordovaPlugin {
 
     // Plugin Tag
-	private final String TAG = "CookieManager";
+	private final String TAG = "CookieJar";
     private CallbackContext callback;
     /**
      * Handles the class execution call
