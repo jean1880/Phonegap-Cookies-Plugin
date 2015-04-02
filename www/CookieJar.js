@@ -24,6 +24,7 @@
  */
 
 var exec = require('cordova/exec');
+var tag = "CookieJar";
 
 /**
  * @constructor
@@ -32,6 +33,8 @@ function CookieJar() {
 
 }
 
+
+
 /**
  * Get device info
  *
@@ -39,7 +42,8 @@ function CookieJar() {
  * @param {Function} errorCallback The function to call when there was an error (OPTIONAL)
  */
 CookieJar.prototype.clear = function (successCallback, errorCallback) {
-    exec(successCallback, errorCallback, "CookieManager", "clear", []);
+    exec(successCallback, errorCallback, tag.
+        "clear", []);
 };
 
 /**
@@ -65,7 +69,7 @@ CookieJar.prototype.get = function (successCallback, errorCallback, URL, target)
         paramaters.target = target;
     }
 
-    exec(successCallback, errorCallback, "CookieManager", "get", [paramaters]);
+    exec(successCallback, errorCallback, tag, "get", [paramaters]);
 };
 
 

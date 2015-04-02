@@ -50,6 +50,12 @@ public class CookieJar extends CordovaPlugin {
     // Plugin Tag
 	private final String TAG = "CookieJar";
     private CallbackContext callback;
+    private enum ACTION {
+        CLEAR,
+        GET,
+        SET
+    }
+
     /**
      * Handles the class execution call
      * @param action  Action to perform in the plugin
@@ -65,47 +71,43 @@ public class CookieJar extends CordovaPlugin {
         boolean success = false;
 
         // Check action call
-        switch (action){
-            case "clear": // clear all cookies
-                this.clear();
-                this.callback.success();
-                success = true;
-                break;
-            case "get": // return cookies
-                JSONObject Options = args.getJSONObject(0);
-                String URL = null;
-                String target = null;
-                try{
-                    URL = Options.get("URL").toString();
-                    try{
-                        target = Options.get("target").toString();
-                    }catch (JSONException er){
-                    }
+        if(action == "clear") {
+            this.clear();
+            this.callback.success();
+            success = true;
+        }else if(action == "get") {
+            JSONObject Options = args.getJSONObject(0);
+            String URL = null;
+            String target = null;
+            try {
+                URL = Options.get("URL").toString();
+                try {
+                    target = Options.get("target").toString();
+                } catch (JSONException er) {
+                }
 
-                    // return string
-                    String result = null;
-                    if(target != null) {
-                        result = get(URL, target);
-                    }else{
-                        result = get(URL);
-                    }
+                // return string
+                String result = null;
+                if (target != null) {
+                    result = get(URL, target);
+                } else {
+                    result = get(URL);
+                }
 
-                    // check return
-                    if(result != "ERROR"){
-                        success = true;
-                        this.callback.success(result);
-                    }else {
-                        success = false;
-                    }
-                }catch (JSONException er){
-                    this.callback.error("Expected 'URL' object in options");
+                // check return
+                if (result != "ERROR") {
+                    success = true;
+                    this.callback.success(result);
+                } else {
                     success = false;
                 }
-                break;
-            default: // throw access violation
+            } catch (JSONException er) {
+                this.callback.error("Expected 'URL' object in options");
+                success = false;
+            }
+        }else {
                 this.callback.error("Unknown action");
                 success = false;
-                break;
         }
 
         return success;
