@@ -26,10 +26,10 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Cookies">
-                <param name="android-package" value="com.jean1880.cookies.Cookies" />
+                <param name="android-package" value="com.jean1880.cookies.CookieManager" />
             </feature>
         </config-file>
 
-        <source-file src="src/android/CookieManager.java" target-dir="src/com/jean1880/cookies" />
+        <source-file src="src/android/CookieManager.java" target-dir="src/com/jean1880/CookieManager" />
     </platform>
 </plugin>

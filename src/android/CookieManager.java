@@ -45,10 +45,10 @@ import java.util.Map;
  * @class Cookies
  * @uses CordovaPlugin
  */
-public class Cookies extends CordovaPlugin {
+public class CookieManager extends CordovaPlugin {
 
     // Plugin Tag
-	private final String TAG = "CookiesPlugin";
+	private final String TAG = "CookieManager";
     private CallbackContext callback;
     /**
      * Handles the class execution call
