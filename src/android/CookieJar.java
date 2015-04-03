@@ -71,11 +71,11 @@ public class CookieJar extends CordovaPlugin {
         boolean success = false;
 
         // Check action call
-        if(action == "clear") {
+        if(action.equalsIgnoreCase("clear")) {
             this.clear();
             this.callback.success();
             success = true;
-        }else if(action == "get") {
+        }else if(action.equalsIgnoreCase("get")) {
             JSONObject Options = args.getJSONObject(0);
             String URL = null;
             String target = null;
