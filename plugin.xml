@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.jean1880.CookieManager" version="0.1.0">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.jean1880.CookieJar" version="0.1.0">
     <name>CookieJar</name>
     <description>Phonegap/Cordova plugin that allows you to clear cookies of the webview. Use it for logging out the user, restart analytics session etc.</description>
     <license>MIT</license>

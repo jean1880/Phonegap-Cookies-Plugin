@@ -24,7 +24,7 @@
  */
 
 
-package com.jean1880.CookieManager;
+package com.jean1880.CookieJar;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
