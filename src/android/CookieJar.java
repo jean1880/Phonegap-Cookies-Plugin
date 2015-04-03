@@ -132,7 +132,16 @@ public class CookieJar extends CordovaPlugin {
     public String get(String URL){
 		Log.v(TAG, "Fetching cookies for " + URL +"...");
         try{
-            return CookieManager.getInstance().getCookie(URL);
+            String cookies[] = CookieManager.getInstance().getCookie(URL).replace(";", "").split(" ");
+
+            JSONObject objectSet = new JSONObject();
+            // build return json
+            for (int i = 0; i < cookies.length; i++) {
+                String[] set = cookies[i].split("=");
+                objectSet.put(set[0],set[1]);
+            }
+
+            return objectSet.toString();
         }catch (Exception er){
             this.callback.error(er.getMessage());
             return "ERROR";
